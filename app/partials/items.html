@@ -1,0 +1,28 @@
+<div class="main">
+<section class="items" ng-controller="ItemController">
+  <h1>Items</h1>
+  <form class="itemAdd">
+    <input ng-model="title" type="text" id="inputItem" value="Type name here..."/>
+    <button type="submit" id="addItem" ng-click="add()">Add new</button>
+  </form>
+  <ul class="itemName"  ng-repeat="item in items track by $index">
+   <li class="item list-unstyled">{{item}}<span class="badge-counter"></span>
+      <button type="button" class="deleteItem" ng-click="removeItem()">Delete</button> </li>
+  </ul>
+</section>
+
+  <section class="comments" ng-controller="CommentController">
+    <h1>Comments</h1>
+    <div class="addComments">
+      <svg width="60" height="60">
+        <rect width="60" height="60"/>
+      </svg>
+      <p><span class="comment"  ng-repeat="c in comments track by $index">{{c}}</span></p>
+      <hr> <p>
+      <svg  class="rectComment" width="60" height="60">
+        <rect width="60" height="60"/>
+      </svg>
+      <textarea ng-model="comments"  ng-click="add()"></textarea></p>
+    </div>
+  </section>
+</div>
