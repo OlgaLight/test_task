@@ -16,10 +16,10 @@ gulp.task('css', function(){ // Создаем таск Sass
         .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('browser-sync', function () {
+gulp.task('browserSync', function () {
     browserSync({
         server: {
-            baseDir: './app'
+            baseDir: 'app'
         },
         open: true,
         notify: false
@@ -35,7 +35,7 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('app/scripts'));
 });
 
-gulp.task('watch', ['browser-sync', 'scripts', 'css'], function () {
+gulp.task('watch', ['browserSync', 'scripts'], function () {
     gulp.watch('app/styles/**/*.css', browserSync.reload);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/scripts/**/*.js', browserSync.reload);
@@ -65,4 +65,4 @@ gulp.task('build', ['clean', 'useref'], function () {
 });
 
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', ['watch', 'browserSync']);

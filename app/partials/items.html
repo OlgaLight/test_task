@@ -1,28 +1,70 @@
-<div class="main">
-<section class="items" ng-controller="ItemController">
-  <h1>Items</h1>
-  <form class="itemAdd">
-    <input ng-model="title" type="text" id="inputItem" value="Type name here..."/>
-    <button type="submit" id="addItem" ng-click="add()">Add new</button>
-  </form>
-  <ul class="itemName"  ng-repeat="item in items track by $index">
-   <li class="item list-unstyled">{{item}}<span class="badge-counter"></span>
-      <button type="button" class="deleteItem" ng-click="removeItem()">Delete</button> </li>
-  </ul>
-</section>
+<div class="main" data-ng-controller="ItemController">
+  <section class="items">
+    <h1>Items</h1>
+    <form class="itemAdd" data-ng-submit="addItem()">
+      <input data-ng-model="itemText" type="text" id="inputItem" value="Type name here..."/>
+      <button type="submit" id="addItem">Add new</button>
+    </form>
+    <ul class="itemName">
+      <li data-ng-model="item.id" data-ng-repeat="item in items track by $index"
+          class="item list-unstyled id-{{ item.id }}"
+          ng-click="selectItem($index)">
+        {{item.text}}
+        <span class="badge-counter" ng-bind="badgeCounter($index)"></span>
+        <button type="button" class="deleteItem" ng-click="removeItem()">Delete</button>
+      </li>
+    </ul>
+  </section>
 
-  <section class="comments" ng-controller="CommentController">
+  <section class="comments">
     <h1>Comments</h1>
-    <div class="addComments">
+    <!--<div class="addComments" ng-repeat="comment in items[activeItemIndex].comments">-->
+    <!--<ul class="addComments" >-->
+    <!--<li class="list-unstyled" data-ng-model="comment"  ng-repeat="comment in items[activeItemIndex].comments track by $index">-->
+    <!--<svg width="60" height="60">-->
+    <!--<rect width="60" height="60"></rect>-->
+    <!--</svg>-->
+    <!--{{comment}}-->
+    <!--<p><span class="comment"></span></p>-->
+    <!--</li>-->
+    <!--</ul>-->
+
+
+    <div id="commentDisplay" ng-repeat="comment in items[activeItemIndex].comments track by $index">
+      <div class="svgRect" >
       <svg width="60" height="60">
-        <rect width="60" height="60"/>
+        <rect width="60" height="60" ng-class="$even ? 'odd' : 'even'"></rect>
       </svg>
-      <p><span class="comment"  ng-repeat="c in comments track by $index">{{c}}</span></p>
-      <hr> <p>
-      <svg  class="rectComment" width="60" height="60">
-        <rect width="60" height="60"/>
-      </svg>
-      <textarea ng-model="comments"  ng-click="add()"></textarea></p>
+      </div>
+      <div class="commentShow">
+        <p><span data-ng-model="comment">{{comment}}</span></p>
+      </div>
     </div>
+    <!--</div>-->
+    <form data-ng-submit="addComment()">
+      <label for="commentArea">
+        <svg width="60" height="60">
+          <rect width="60" height="60"></rect>
+        </svg>
+      </label>
+      <input type="text" id="commentArea" data-ng-model="itemComment">
+    </form>
+  </section>
+
+  <!--<section class="comments" data-ng-model="items.comments">-->
+  <!--<h1>Comments</h1>-->
+  <!--<ul class="addComments" >-->
+  <!--<li  ng-repeat="comment in items.comments" class="list-unstyled">-->
+  <!--{{comment}}-->
+  <!--</li>-->
+  <!--</ul>-->
+  <!--<form>-->
+  <!--<label for="#commentArea" class="form-control"><svg width="60" height="60">-->
+  <!--<rect width="60" height="60"></rect>-->
+  <!--</svg></label>-->
+  <!--<textarea id="#commentarea" ></textarea>-->
+  <!--</form>-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
   </section>
 </div>

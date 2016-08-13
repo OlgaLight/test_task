@@ -2,14 +2,17 @@
   "name": "test_task",
   "version": "1.0.0",
   "description": "test task",
-  "main": "index.js",
+  "main": "app/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
+    "postinstall": "bower install",
+    "start": "static -p 3000"
+
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bower": "",
+    "bower": "^1.7.9",
     "browser-sync": "^2.14.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
