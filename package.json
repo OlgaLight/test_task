@@ -2,14 +2,14 @@
   "name": "test_task",
   "version": "1.0.0",
   "description": "test task",
-  "main": "app/index.html",
+  "main": "",
   "scripts": {
 
     "postinstall": "bower install",
-    "start": "static -p 3000"
-
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000"
   },
-  "author": "",
+  "author": "Olga Cherevko",
   "license": "ISC",
   "devDependencies": {
     "bower": "^1.7.9",

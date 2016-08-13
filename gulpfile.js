@@ -6,15 +6,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglifyjs'),
     del = require('del'),
-    autoprefixer = require('gulp-autoprefixer'),
     useref = require('gulp-useref');
 
-gulp.task('css', function(){ // Создаем таск Sass
-    return gulp.src('app/styles/**/*.css')
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.reload({stream: true}))
-});
 
 gulp.task('browserSync', function () {
     browserSync({
@@ -65,4 +58,4 @@ gulp.task('build', ['clean', 'useref'], function () {
 });
 
 
-gulp.task('default', ['watch', 'browserSync']);
+gulp.task('default', ['watch', 'build', 'browserSync']);
