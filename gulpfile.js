@@ -2,6 +2,7 @@
  * Created by olga on 12.08.16.
  */
 var gulp = require('gulp'),
+    sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglifyjs'),
@@ -19,6 +20,12 @@ gulp.task('browserSync', function () {
     });
 });
 
+gulp.task('sass', function () {
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('app/styles'));
+});
+
 gulp.task('scripts', function () {
     return gulp.src(
         'app/scripts/**/*.js'
@@ -28,7 +35,8 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('app/scripts'));
 });
 
-gulp.task('watch', ['browserSync', 'scripts'], function () {
+gulp.task('watch', ['scripts', 'sass'], function () {
+    gulp.watch('app/scss/**/*.scss', browserSync.reload);
     gulp.watch('app/styles/**/*.css', browserSync.reload);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/scripts/**/*.js', browserSync.reload);

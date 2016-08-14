@@ -1,72 +1,25 @@
 body {
-    font-family: "Open Sans Light", sans-serif, light;
-    overflow: auto;
-    background-color: #f9f9f9;
-
-}
-
-#container {
+  font-family: "Open Sans Light", sans-serif, light;
+  overflow: auto;
+  background-color: #f9f9f9; }
+  body #container {
     margin: 0 auto;
-    max-width: 1200px;
-    background-color: #f9f9f9;
-}
-
-#sidebar #main {
-    display: inline-block;
-    vertical-align: top;
-}
-
-#sidebar {
-    height: 100%;
-    width: 340px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #2b2f3e;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-
-#lists a {
-    padding: 30px 8px 30px 40px;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
-    transition: 0.3s;
-    color: #565a69;
-}
-
-#lists a:hover, .offcanvas a:focus {
-    background-color: #ff3951;
-    color: #ffffff;
-}
-
-.sidebarName {
-    display: block;
-    text-align: left;
-    padding-left: 40px;
-    padding-bottom: 100px;
-    font-size: 36px;
-}
-
-.sidebarName a{
-    text-decoration: none;
-    color: #565a69;
-}
-
-.sidebarName a:hover {
-    text-decoration: none;
-    color: #ffffff;
-}
+    max-width: 1200px; }
+    body #container #main .home {
+      margin-top: 165px;
+      margin-left: 100px;
+      border: none;
+      background-color: #f9f9f9;
+      box-shadow: none; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        body #container #main .home {
+          margin-left: 100px; } }
 
 #main {
-    width: 100%;
-    height: auto;
-    background-color: #f9f9f9;
-}
-
-#main section {
+  width: 100%;
+  height: auto;
+  background-color: #f9f9f9; }
+  #main section {
     vertical-align: top;
     background-color: #ffffff;
     border: 1px solid #f2f2f2;
@@ -76,238 +29,185 @@ body {
     height: 100%;
     margin-top: 10px;
     text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-}
-
-input {
-    border: 1px solid #f2f2f2;
-    box-shadow: 0px 0px 5px 0px #d3d3d3;
-}
-
-input:focus {
-    outline: none;
-}
-
-#main .home {
-    margin-top: 165px;
-    margin-left: 100px;
-    border: none;
-    background-color: #f9f9f9;
-    box-shadow: none;
-}
-
-.items {
-    margin-left: 150px;
-    margin-right: 10px;
-}
-
-.items h1, .comments h1 {
+    padding: 0px 10px 10px 10px;
+    font-size: 16px; }
+    #main section input {
+      border: 1px solid #f2f2f2;
+      box-shadow: 0px 0px 5px 0px #d3d3d3; }
+      #main section input:focus {
+        outline: none; }
+  #main h1 {
     font-size: 36px;
     font-weight: lighter;
-    color: #676a78;
-}
-
-.comments {
-    height: auto;
-}
-
-.itemName, .itemAdd {
-    display: inline;
-}
-
-.itemName li {
-    list-style: none;
-    padding-top: 0px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #e6e6e6;
-    margin-top: 15px;
-}
-
-.item, #addItem .badge-counter{
-    font-weight: bold;
-}
-
-.item:hover, .item:focus {
-    border-left: 7px outset #ff3951;
-}
-
-button {
-    border-radius: 4px;
-    font-size: 18px;
-
-}
-
-#inputItem {
-    font-size: 16px;
-}
-
-#addItem {
-    background-color: #27ccc0;
-    color: white;
-    border: 1px solid #27ccc0;
-    float: right;
-    box-shadow: none;
-}
-
-.deleteItem {
-    border: 1px solid #ff3159;
-    color: #ff3159;
-    background-color: #ffffff;;
-    float: right;
-}
-
-.addComments {
-    padding-top: inherit;
-}
-
-#commentArea {
-    float: right;
-    resize: none;
-    width: 80%;
-    height: 75px;
-}
-
-#commentDisplay {
-
+    color: #676a78; }
+  #main .items {
+    margin-left: 150px;
+    margin-right: 10px; }
+    #main .items .itemAdd {
+      display: inline; }
+      #main .items .itemAdd #inputItem {
+        font-size: 18px; }
+      #main .items .itemAdd #addItem {
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #27ccc0;
+        color: white;
+        border: 1px solid #27ccc0;
+        float: right;
+        box-shadow: none; }
+    #main .items .itemName {
+      display: inline; }
+      #main .items .itemName li {
+        list-style: none;
+        padding-top: 0px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f2f2f2;
+        margin-top: 15px; }
+      #main .items .itemName .item {
+        font-weight: bold; }
+        #main .items .itemName .item:hover, #main .items .itemName .item:focus {
+          border-left: 5px outset #ff3951; }
+        #main .items .itemName .item .badge-counter {
+          margin-top: 8px;
+          padding: 0 6px;
+          line-height: 18px;
+          font-size: 16px;
+          background: #27ccc0;
+          border-radius: 9px;
+          color: #ffffff;
+          font-weight: bold; }
+          #main .items .itemName .item .badge-counter:hover, #main .items .itemName .item .badge-counter:focus {
+            border-left: 5px outset #ff3951; }
+        #main .items .itemName .item .deleteItem {
+          border: 1px solid #ff3951;
+          color: #ff3159;
+          background-color: #ffffff;
+          float: right; }
+    #main .items button {
+      border-radius: 4px;
+      font-size: 18px;
+      box-shadow: none; }
+  #main .comments #commentDisplay {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #e6e6e6;
     vertical-align: top;
-    display: inline-block;
-}
-
-.svgRect {
-    float: left;
-    width: 20%;
-    margin-top: 18px;
-    margin-bottom: 18px;
-}
-
-.commentShow span {
-    float: left;
+    display: inline-block; }
+    #main .comments #commentDisplay .svgRect {
+      float: left;
+      width: 20%;
+      margin-top: 18px;
+      margin-bottom: 18px; }
+      #main .comments #commentDisplay .svgRect .odd {
+        fill: #ff8a00; }
+      #main .comments #commentDisplay .svgRect .even {
+        fill: #47568b; }
+    #main .comments #commentDisplay .commentShow span {
+      float: left;
+      width: 80%;
+      margin-bottom: 18px; }
+  #main .comments #inputComment label svg rect {
+    fill: #e6e6e6; }
+  #main .comments #inputComment #commentArea {
+    float: right;
+    resize: none;
     width: 80%;
-    margin-bottom: 18px;
-
-}
-
-label svg rect {
-    fill: #e6e6e6;
-}
-
-.odd {
-    fill: #ff8a00;
-}
-
-.even {
-    fill: #47568b;
-}
-
-.badge-counter {
-    margin-top: 8px;
-    padding: 0 6px;
-    line-height: 18px;
-    font-size: 11px;
-    background: #27ccc0;
-    border-radius: 9px;
-    color: #ffffff;
-}
-
+    height: 75px; }
 
 /*sorry for responsive design, hope with bootstrap it will be better*/
-
 @media screen and (min-width: 1600px) {
-    #sidebar {
-        height: 100%;
-        width: 400px;
-    }
-    #main {
-        margin-left: 100px;
-        width: 100%;
-    }
-
+  #sidebar {
+    height: 100%;
+    width: 400px; }
+  #main {
+    margin-left: 100px;
+    width: 100%; }
     #main section {
-        width: 35%;
-    }
-}
+      width: 35%; } }
 
 @media screen and (max-width: 1600px) and (min-width: 1200px) {
-    #sidebar {
-        height: 100%;
-        width: 280px;
-    }
-
-    #main {
-        margin-left: 130px;
-        width: 100%;
-    }
-
+  #sidebar {
+    height: 100%;
+    width: 200px; }
+  #main {
+    margin-left: 130px;
+    width: 100%; }
     #main section {
-        width: 35%;
-    }
-}
+      width: 35%; } }
 
 @media screen and (max-width: 1199px) and (min-width: 768px) {
-    #sidebar {
-        height: 100%;
-        width: 200px;
-    }
-
-    #main {
-        margin-left: 200px;
-        width: 90%;
-    }
-
-    #main section .comments {
-        display: none;
-        width: 100%;
-        height: 100%;
-        margin-top: 20px;
-        font-size: 16px;
-        float: none;
-    }
-
-    .items {
-        margin-left: auto;
-    }
-}
+  #sidebar {
+    height: 100%;
+    width: 200px; }
+  #main {
+    margin-left: 200px;
+    width: 90%; }
+  #main section .comments {
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    float: none; }
+  .items {
+    margin-left: auto; } }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    #sidebar {
-        height: 150px;
-        width: 100%;
-        text-align: center;
-    }
+  #sidebar {
+    height: 150px;
+    width: 100%;
+    text-align: center; }
+    #sidebar .sidebarName {
+      padding-left: 40px;
+      padding-bottom: 20px;
+      font-size: 36px; }
+  #main section {
+    width: 60%;
+    height: 100%;
+    margin-top: 165px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 16px; }
+    #main section .items, #main section .comments {
+      margin-left: 20px; }
+    #main section .comments {
+      margin-top: 10px !important;
+      margin-left: 150px !important; } }
 
-    .sidebarName {
-        padding-left: 40px;
-        padding-bottom: 20px;
-        font-size: 36px;
-    }
+#sidebar, #main {
+  display: inline-block;
+  vertical-align: top; }
 
-    #main section {
-        width: 60%;
-        height: 100%;
-        margin-top: 165px;
-        text-align: left;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        font-size: 16px;
-    }
-
-    .items .comments {
-        margin-left: 20px;
-    }
-
-    .comments {
-        margin-top: 10px !important;
-        margin-left: 150px !important;
-    }
-
-    section .home {
-        margin-left: 100px;
-    }
-}
+#sidebar {
+  height: 100%;
+  width: 340px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2b2f3e;
+  overflow-x: hidden;
+  padding-top: 20px; }
+  #sidebar #lists > a {
+    padding: 30px 8px 30px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    color: #565a69; }
+    #sidebar #lists > a:hover, #sidebar #lists > a:focus {
+      background-color: #ff3951;
+      color: #ffffff; }
+  #sidebar .sidebarName {
+    display: block;
+    text-align: left;
+    padding-left: 40px;
+    padding-bottom: 100px;
+    font-size: 36px; }
+    #sidebar .sidebarName a {
+      text-decoration: none;
+      color: #565a69; }
+      #sidebar .sidebarName a:hover, #sidebar .sidebarName a:focus {
+        text-decoration: none;
+        color: #ffffff; }
