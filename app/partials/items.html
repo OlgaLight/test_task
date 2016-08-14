@@ -11,7 +11,6 @@
           class="item list-unstyled id-{{ item.id }}"
           ng-click="selectItem($index)">
         {{item.text}}
-        <span ng-show="selectItem($index)" class="sideLine"></span>
         <span class="badge-counter" ng-bind="badgeCounter($index)"></span>
         <button type="button" class="deleteItem" ng-click="removeItem()">Delete</button>
       </li>
