@@ -36,8 +36,7 @@ angular.module('testApp')
         $scope.activeItemIndex = id;
 
       };
-
-
+      
       $scope.addComment = function () {
         if ($scope.items.length == 0){
           alert("Please, add item first!");
